@@ -55,7 +55,7 @@ form input {
 }
 
 .todo_container {
-  width: 50%;
+  width: 90%;
   margin: 0 auto;
 }
 .todo {
@@ -70,7 +70,7 @@ form input {
 }
 .todo input {
   cursor: pointer;
-  width: 50%;
+  width: 980%;
   border: none;
   outline: none;
   cursor: pointer;
