@@ -1,6 +1,9 @@
 import React from "react";
 import {db} from "../firebase";
 import { collection,addDoc } from "firebase/firestore";
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure();
 
 function AddToDo(){
     const [title, setTitle] = React.useState("");
@@ -13,7 +16,7 @@ function AddToDo(){
               completed: false, 
             });
             setTitle("")
-            alert("Do it")
+            toast("Remember do-it !....")
         }
     }
     return(
