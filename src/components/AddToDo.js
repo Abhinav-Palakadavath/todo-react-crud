@@ -10,9 +10,10 @@ function AddToDo(){
         if( title !== ""){
             await addDoc(collection(db,"todos"),{
               title,
-              completed: false,  
+              completed: false, 
             });
             setTitle("")
+            alert("Do it")
         }
     }
     return(
