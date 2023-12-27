@@ -1,36 +1,33 @@
 import React from "react";
-import {db} from "../firebase";
-import { collection,addDoc } from "firebase/firestore";
-import {toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
-toast.configure();
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
-function AddToDo(){
+function AddToDo() {
     const [title, setTitle] = React.useState("");
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if( title !== ""){
-            await addDoc(collection(db,"todos"),{
-              title,
-              completed: false, 
+        if (title !== "") {
+            await addDoc(collection(db, "todos"), {
+                title,
+                completed: false,
             });
             setTitle("")
-            toast("Remember do-it !....")
         }
     }
-    return(
+
+    return (
         <form onSubmit={handleSubmit}>
             <div className="input_container">
-                <input 
+                <input
                     type="text"
                     placeholder="Enter todo"
                     value={title}
-                    onChange={(e)=> setTitle(e.target.value)}
+                    onChange={(e) => setTitle(e.target.value)}
                 />
             </div>
             <div className="btn_container">
-                <button>Add</button>
+                <button >Add</button>
             </div>
         </form>
     )
